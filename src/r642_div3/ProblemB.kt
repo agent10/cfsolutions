@@ -1,14 +1,16 @@
 package r642_div3
 
+import helpers.readInt
+import helpers.readLongArray
 import kotlin.math.*
 
 fun main() {
-    val t = readLine()!!.toInt()
+    val t = readInt()
     repeat(t) {
-        val (n, k) = readLine()!!.split(" ").map { it.toLong() }
-        val a = readLine()!!.split(" ").map { it.toLong() }.sorted()
+        val (n, k) = readLongArray()
+        val a = readLongArray().sorted()
         var maxSum = a.sum()
-        val b = readLine()!!.split(" ").map { it.toLong() }.sortedDescending()
+        val b = readLongArray().sortedDescending()
         repeat(k.toInt()) {
             if (b[it] > a[it]) {
                 maxSum += (b[it] - a[it])
